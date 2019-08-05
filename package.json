@@ -1,0 +1,22 @@
+{
+  "name": "client_shadowbaker",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "description": "test shadow baker",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch",
+    "start": "webpack-dev-server --open --config webpack.config.js"
+  },
+  "dependencies": {
+    "shadowbaker": "git+ssh://git@github.com:spidersharma03/shadowbakerLib.git#semver:^1.0.0",
+    "dat.gui": "^0.7.6"
+  },
+  "devDependencies": {
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "author": "prashant"
+}

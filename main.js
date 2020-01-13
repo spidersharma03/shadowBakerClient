@@ -39,7 +39,7 @@ export class ShadowBakerTest {
             "numSamplesPerFrame": 2,
             "height": 0,
             "shadowMapResolutionLevel": 6,
-            "sides": 2
+            "sides": 2,
         }
         const panel = new GUI( { width: 310 } );
         panel.add(settings, 'solidAngle', 1, 90, 0.05).onChange( (value) => {
@@ -99,7 +99,7 @@ export class ShadowBakerTest {
             enableBlur: true, blurRadius: 0.5,
             falloff: 1.5,
             smoothTransition: false,
-            useMovingAverage: true,
+            useMovingAverage: false,
             side: Pixotronics.ShadowBaker.ShadowSide.DOWN
         });
 
@@ -184,10 +184,14 @@ export class ShadowBakerTest {
 
                 const onStart = () => {
                     updateShadowPlane();
-                    this.scene.add(shadowPlane);
                 }
 
+                const onComplete = () => {
+                    this.scene.add(shadowPlane);
+                };
+
                 this.shadowBaker.onBeforeStart(onStart);
+                this.shadowBaker.onComplete(onComplete);
 
                 this.shadowBaker.onProgress( progress => {
                     console.log("Baker::Shadow Baking " + progress * 100 + "% complete");

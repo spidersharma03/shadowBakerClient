@@ -10,8 +10,9 @@
     "start": "webpack-dev-server --open --config webpack.config.js"
   },
   "dependencies": {
-    "shadowbaker": "git+ssh://git@github.com:spidersharma03/shadowbakerLib.git#semver:^1.0.0",
-    "dat.gui": "^0.7.6"
+    "shadowbaker": "git+ssh://git@github.com:pixotronics/shadowbakerLib.git#ef3bf959d6e8e22ad9fc9f78e6580329e01805ba",
+    "dat.gui": "^0.7.6",
+    "three": "0.129.0"
   },
   "devDependencies": {
     "webpack": "^4.38.0",
